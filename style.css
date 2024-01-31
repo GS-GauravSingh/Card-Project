@@ -1,0 +1,193 @@
+/* Importing Google Fonts - Nunito. */
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap");
+
+/* Basic Reset. */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+/* Basic Reset Ends. */
+
+/* General Styling */
+.noWrap {
+	white-space: nowrap;
+}
+
+body {
+	min-height: 100vh;
+	font-family: "Nunito", sans-serif;
+	font-size: 1.5rem;
+	background-color: #475569;
+	background-image: radial-gradient(whitesmoke, #475569);
+
+	display: flex;
+	flex-direction: column;
+}
+
+/* Header and Footer Styling. */
+header,
+footer {
+	position: sticky;
+	background-color: #0e274e;
+	color: white;
+	text-align: center;
+}
+
+header {
+	top: 0;
+}
+
+footer {
+	bottom: 0;
+}
+
+/* Navigation Bar */
+.navigationBar {
+	display: flex;
+	justify-content: space-evenly;
+	background-color: aliceblue;
+	padding: 0.5rem;
+	border-bottom: 1px solid black;
+	font-weight: bold;
+}
+
+.navigationBar a,
+.navigationBar a:visited {
+	color: black;
+}
+
+.navigationBar a:hover,
+.navigationBar a:focus {
+	color: rgb(57, 97, 228);
+}
+
+/* Main Styling */
+main {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	gap: 1.5rem;
+	padding: 1rem;
+}
+
+.profileCards {
+	scroll-margin-top: 7rem;
+	width: min(100%, 350px);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	border: 1px solid black;
+	padding: 20px;
+	border-radius: 5%;
+	background-color: rgba(206, 206, 206, 0.377);
+}
+
+.profileCards figure {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.profileCards img {
+	border-radius: 50%;
+	border: 5px double #333333af;
+	margin: 1rem;
+}
+
+.profileCards figcaption {
+	font-weight: bolder;
+	font-size: 2rem;
+}
+
+/* Media Queries. */
+
+/* Small Screen Devices */
+@media screen and (min-width: 576px) {
+	/* Styles */
+	main {
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+
+	.profileCards {
+		width: min(100%, 400px);
+	}
+}
+
+/* Medium Screen Devices */
+@media screen and (min-width: 768px) {
+	/* Styles */
+	.navigationBar {
+		display: none;
+	}
+
+	.profileCards {
+		width: min(100%, 320px);
+	}
+
+	.profileCards figure {
+		flex-direction: column-reverse;
+	}
+}
+
+/* Large Screen Devices */
+@media screen and (min-width: 992px) {
+	/* Styles */
+	.profileCards {
+		width: min(100%, 400px);
+	}
+}
+
+/* Extra Large (XL) Screen Devices */
+@media screen and (min-width: 1200px) {
+	/* Styles */
+	.profileCards {
+        width: min(100%, 500px);
+	}
+}
+
+/* Mobile Device LANDSCAPE */
+@media screen and (min-height: 375px) and (min-aspect-ratio: 7/4) {
+
+    /* Styles */
+    .navigationBar{
+        display: none;
+    }
+
+    main{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: stretch;
+        gap: 0;
+    }
+
+    .profileCards{
+        width: min(calc(33% - 0.25rem), 200px);
+    }
+
+    .profileCards figcaption{
+        font-size: 1.25rem;
+    }
+
+    .profileCards p{
+        font-size: 1rem;
+    }
+}
